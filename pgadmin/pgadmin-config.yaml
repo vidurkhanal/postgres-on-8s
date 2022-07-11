@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pg-admin-config
+  labels:
+    app: pg-admin
+data:
+   pgadmin-email: vidur@khanal.com
+   servers.json: |
+    {
+        "Servers": {
+          "1": {
+            "Name": "PostgreSQL DB",
+            "Group": "Servers",
+            "Port": 5432,
+            "Username": "vidurkhanal",
+            "Host": "postgres-service",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres"
+          }
+        }
+    }
